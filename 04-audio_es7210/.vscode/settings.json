@@ -12,5 +12,11 @@
         "board/esp32s3-bridge.cfg"
     ],
     "idf.pythonBinPathWin": "d:\\ESPIDF\\tools\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe",
-    "idf.toolsPathWin": "d:\\ESPIDF\\tools"
+    "idf.toolsPathWin": "d:\\ESPIDF\\tools",
+    "files.associations": {
+        "esp_check.h": "c",
+        "stdlib.h": "c"
+    },
+    "idf.portWin": "COM14",
+    "idf.flashType": "UART"
 }

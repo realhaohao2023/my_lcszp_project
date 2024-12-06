@@ -1,14 +1,8 @@
 #include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "esp_system.h"
+#include <string.h>
 #include "esp_vfs_fat.h"
 #include "sdmmc_cmd.h"
-#include "esp_err.h"
-#include "esp_log.h"
-#include <string.h>
 #include "driver/sdmmc_host.h"
-#include "dirent.h"
 
 #define BSP_SD_CLK          (47)
 #define BSP_SD_CMD          (48)
@@ -72,27 +66,6 @@ static esp_err_t s_example_read_file(const char *path)
     //打印读取的内容
     ESP_LOGI(TAG, "Read from file: '%s'", line);
     return ESP_OK;
-}
-
-// 打印指定路径下的所有文件
-void list_files(const char *path)
-{
-    struct dirent *entry;
-    DIR *dp = opendir(path);
-
-    if (dp == NULL)
-    {
-        ESP_LOGE(TAG, "Failed to open directory: %s", path);
-        return;
-    }
-
-    ESP_LOGI(TAG, "Listing files in directory: %s", path);
-    while ((entry = readdir(dp)) != NULL)
-    {
-        ESP_LOGI(TAG, "Found file: %s", entry->d_name);
-    }
-
-    closedir(dp);
 }
 
 
@@ -160,10 +133,10 @@ void app_main(void)
     sdmmc_card_print_info(stdout, card); //在终端打印SD卡信息
 
     //新建一个txt文件，用指针指向这个文件
-    const char *file_hello = MOUNT_POINT"/你好helloTEST.txt";
+    const char *file_hello = MOUNT_POINT"/你好hellotest.txt";
     char data[EXAMPLE_MAX_CHAR_SIZE];
     //将内容写入缓冲区
-    snprintf(data, EXAMPLE_MAX_CHAR_SIZE, "%s %s!\n", "Hello world!", card->cid.name);
+    snprintf(data, EXAMPLE_MAX_CHAR_SIZE, "%s %s!\n", "你好hello先生", card->cid.name);
  
     // 打印MOUNT_POINT路径下的所有文件
     //list_files(MOUNT_POINT);
