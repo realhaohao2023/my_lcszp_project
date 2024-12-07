@@ -11,11 +11,8 @@
     "idf.openOcdConfigs": [
         "board/esp32s3-bridge.cfg"
     ],
-    "idf.portWin": "COM14",
     "idf.pythonBinPathWin": "d:\\ESPIDF\\tools\\python_env\\idf5.3_py3.11_env\\Scripts\\python.exe",
     "idf.toolsPathWin": "d:\\ESPIDF\\tools",
-    "files.associations": {
-        "yingwu.h": "c"
-    },
+    "idf.portWin": "COM14",
     "idf.flashType": "UART"
 }
