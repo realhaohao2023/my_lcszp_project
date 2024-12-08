@@ -74,7 +74,7 @@ void app_main(void)
 {
     //定义一个esp_err_t类型的变量，用于存储函数返回值
     esp_err_t ret;
-
+·
     //定义sd卡挂载选项
     esp_vfs_fat_sdmmc_mount_config_t mount_config = 
     {
